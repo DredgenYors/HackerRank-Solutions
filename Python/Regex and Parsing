@@ -1,0 +1,55 @@
+// Detect Floating Point Number
+// TO SOLVE
+
+// Re.split()
+// TO SOLVE
+
+// Group(), Groups() & Groupdict()
+// TO SOLVE
+
+// Re.findall() & Re.finditer()
+// TO SOLVE
+
+// Re.start() & Re.end()
+// TO SOLVE
+
+// Validating phone numbers
+// TO SOLVE
+
+// Validating and Parsing Email Addresses
+// TO SOLVE
+
+// Hex Color Code
+// TO SOLVE
+
+// HTML Parser - Part 1
+// TO SOLVE
+
+// HTML Parser - Part 2
+// TO SOLVE
+
+// Detect HTML Tags, Attributes and Attribute Values
+// TO SOLVE
+
+// Validating UID
+// TO SOLVE
+
+// Regex Substitution
+import re
+
+n = int(input())
+
+for _ in range(n):
+    line = input()
+    line = re.sub(r'(?<= )&&(?= )', 'and', line)
+    line = re.sub(r'(?<= )\|\|(?= )', 'or', line)
+    print(line)
+
+// Validating Credit Card Numbers
+// TO SOLVE
+
+// Validating Postal Codes
+// TO SOLVE
+
+// Matrix Script
+// TO SOLVE

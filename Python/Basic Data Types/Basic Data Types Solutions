@@ -1,0 +1,103 @@
+// Tuples
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = input()
+    real_ints = []
+        
+    for value in integer_list:
+        intvers = int(value)
+        real_ints.append(intvers)
+
+// Lists
+if __name__ == '__main__':
+    N = int(input())
+    list = []
+    i = 0
+    while i < N : 
+        command = input()
+        split_command = command.split()
+        list_op = split_command[0]
+        if list_op == "insert":
+            list.insert(int(split_command[1]), int(split_command[2]))
+        if list_op == "print":
+            print(list)
+        if list_op == "remove":
+            list.remove(int(split_command[1]))
+        if list_op == "append":
+            list.append(int(split_command[1]))
+        if list_op == "sort":
+            list.sort()
+        if list_op == "pop":
+            list.pop()
+        if list_op == "reverse":
+            list.reverse()
+        i = i + 1
+
+// Finding the Percentage
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    
+    vals_to_avg = student_marks[query_name]
+    avg = 0
+    sum = 0;
+    for x in vals_to_avg:
+        sum = x + sum
+        
+    avg = sum / len(vals_to_avg)
+    print(f'{avg:.2f}')
+        
+// Nested Lists
+if __name__ == '__main__':
+    student_dict = {}
+    name_list = []
+    score_list = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        
+        student_dict.update({name:score})
+        name_list.append(name)
+        score_list.append(score)
+    
+    min_score = min(score_list)
+    
+    keys = [key for key, val in student_dict.items() if val == min_score]
+    for x in keys:
+        student_dict.pop(x)
+    
+    score_list_len = len(score_list)
+    i = 0
+    while i < score_list_len:
+        for z in score_list:
+            if z == min_score:
+                score_list.remove(min_score)
+        i = i + 1
+    
+    next_min_score = min(score_list)
+    
+    prnt_keys = [key for key, val in student_dict.items() if val == next_min_score]
+    prnt_keys.sort()
+    
+    for y in prnt_keys:
+        print(y)
+
+// Find the Runner-Up Score!
+// TO SOLVE
+
+// List Comprehensions
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    
+    x_y_z = [x, y, z]
+    
+    i_j_k = [[a, b, c] for a in range(x+1) for b in range(y+1) for c in range(z+1) if sum([a, b, c]) != n]
+    print(i_j_k)

@@ -1,0 +1,225 @@
+// sWAP cASE
+def swap_case(s):
+    swapped_str = ''
+    for val in s:
+        if val.isspace():
+            swapped_str = swapped_str + val
+        elif val.isupper() == True:
+            lowercase = val.lower()
+            swapped_str = swapped_str + lowercase
+        elif val.islower() == True:
+            uppercase = val.upper()
+            swapped_str = swapped_str + uppercase
+        else:
+            swapped_str = swapped_str + val
+    return swapped_str
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
+
+// String Split and Join
+def split_and_join(line):
+    split_str = line.split(" ")
+    join_str = "-".join(split_str)
+    
+    return join_str
+    
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+
+// What's Your Name
+def print_full_name(first, last):
+    print("Hello {0} {1}! You just delved into python.".format(first,last))
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+
+// Mutations
+def mutate_string(string, position, character):
+    str_list = list(string)
+    str_list[position] = character
+    string = ''.join(str_list)
+    return string
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+
+// Find a string
+def count_substring(string, sub_string):
+    sub_str_count = 0
+    for i in range (0, len(string)):
+        if string[i:].startswith(sub_string) == True:
+            sub_str_count += 1
+    return sub_str_count
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
+
+// String Validators
+if __name__ == '__main__':
+    s = input()
+    alnum_count = 0
+    alpha_count = 0
+    digit_count = 0
+    lower_count = 0
+    upper_count = 0
+    
+    for alnum in s:
+        if alnum.isalnum():
+            print(alnum.isalnum())
+            alnum_count = alnum_count + 1
+            break
+    
+    if alnum_count == 0:
+        print("False")
+        
+    for alpha in s:
+        if alpha.isalpha():
+            print(alpha.isalpha())
+            alpha_count = alpha_count + 1
+            break
+    
+    if alpha_count == 0:
+        print("False")
+        
+    for digit in s:
+        if digit.isdigit():
+            print(digit.isdigit())
+            digit_count = digit_count + 1
+            break
+    
+    if digit_count == 0:
+        print("False")
+        
+    for lower in s:
+        if lower.islower():
+            print(lower.islower())
+            lower_count = lower_count + 1
+            break
+    
+    if lower_count == 0:
+        print("False")
+        
+    for upper in s:
+        if upper.isupper():
+            print(upper.isupper())
+            upper_count = upper_count + 1
+            break
+            
+    if upper_count == 0:
+        print("False")
+        
+// Text Alignment
+// TO SOLVE
+
+// Text Wrap
+import textwrap
+
+def wrap(string, max_width):
+    sub_str_list = []
+    return_str = ""
+    i = 0
+    while i < len(string):
+        sub_str_list.append(string[i:i+max_width])
+        i = i + max_width
+        
+    for sub_str in sub_str_list:
+        return_str = return_str + sub_str +'\n'
+    return return_str
+
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
+
+// Designer Door Mat
+// TO SOLVE
+
+// Alphabet Rangoli
+import string
+def print_rangoli(size):
+
+    if size == 1:
+        print('a')
+        return
+        
+    alpha_lower = string.ascii_lowercase
+    return_array = []
+    return_str = ""
+    width = (size * 4) - 3  # Correct width calculation
+    
+    for i in range(0, size):
+        if i == 0:
+            return_str = alpha_lower[size - 1].center(width, '-')
+            return_array.insert(i, return_str)
+            return_array.insert(i - 1, return_str)
+        else:
+            chars = alpha_lower[size - 1 - i:size]  
+            mirrored = chars[::-1] + chars[1:]  
+            return_str = '-'.join(mirrored).center(width, '-')
+            return_array.insert(i, return_str)
+            if i != size - 1:
+                return_array.insert(-i - 1, return_str)
+    
+    for row in return_array:
+        print(row)
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
+
+// Capitalize!
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the solve function below.
+def solve(s):
+    result = []
+    words = s.split(" ")  
+    for word in words:
+        if word and word[0].isdigit():  
+            result.append(word)  # Keep the word as is
+        elif word: 
+            result.append(word.capitalize())
+        else:
+            result.append("")  # Preserve empty spaces
+    output_string = " ".join(result)  
+    return(output_string)
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+// String Formatting
+// TO SOLVE
+
+// The Minion Game
+// TO SOLVE
+
+// Merge the Tools!
+// TO SOLVE

@@ -1,0 +1,52 @@
+// StringStream
+#include <sstream>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+vector<int> parseInts(string str) {
+    vector<string> ints;
+    vector<int> testreturn;
+    stringstream ss(str);
+    string number;
+    string space = " ";
+    int tempInt;
+    
+    while(getline(ss, number, ',')) {
+        space = space + number;
+        ints.push_back(space);
+        space = " ";
+    }
+    
+    for (string value : ints) {
+        tempInt = stoi(value);
+        testreturn.insert(testreturn.end(), tempInt);
+    }
+    
+    return testreturn;
+}
+
+int main() {
+    string str;
+    cin >> str;
+    vector<int> integers = parseInts(str);
+    for(int i = 0; i < integers.size(); i++) {
+        cout << integers[i] << "\n";
+    }
+    
+    return 0;
+}
+
+// Strings
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	// Complete the program
+  
+    return 0;
+}
+
+// Attribute Parser
+// TO SOLVE

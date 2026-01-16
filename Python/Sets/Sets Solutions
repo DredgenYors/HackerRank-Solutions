@@ -1,0 +1,152 @@
+// Introduction to Sets
+def average(array):
+    distinct_heights = set(array)
+    return((sum(distinct_heights))/(len(distinct_heights)))
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+
+// Symmetric Difference
+a_size = int(input())
+a = set(int(x) for x in input().split())
+b_size = int(input())
+b = set(int(x) for x in input().split())
+
+a_minus_b = a.difference(b)
+b_minus_a = b.difference(a)
+
+sym_dif = a_minus_b.union(b_minus_a)
+
+sorted_sym_dif = sorted(list(sym_dif))
+
+for value in sorted_sym_dif:
+    print(value)
+
+// Set .add()
+s = set()
+num_stamps = int(input())
+
+for i in range(0,num_stamps):
+    country = input()
+    s.add(country)
+    
+print(len(s))
+
+// Set .discard(), .remove() & .pop()
+set_length = int(input())
+s = set([int(x) for x in input().split()])
+num_commands = int(input())
+
+for i in range(0,num_commands):
+    command = input().split()
+    
+    if command[0] == 'pop':
+        print("Command:" + command[0])
+        x = s.pop(1)
+        print(x)
+    elif command[0] == 'remove':
+        print("Command:" + command[0] + command[1])
+        x = int(command[1])
+        if s.remove(x) != 'None':
+            continue
+    elif command[0] == 'discard':
+        print("Command:" + command[0] + command[1])
+        x = int(command[1])
+        s.discard(x)
+        
+    print(s)
+        
+print(sum(s))
+
+// Set .union() Operation
+english_subs = int(input())
+english_list = set([int(x) for x in input().split()])
+french_subs = int(input())
+french_list = set([int(x) for x in input().split()])
+
+subs_list = english_list.union(french_list)
+
+print(len(subs_list))
+
+// Set .intersection() Operation
+e_sub = int(input())
+e_list = set([int(x) for x in input().split()])
+f_sub = int(input())
+f_list = set([int(x) for x in input().split()])
+
+print(len(e_list.intersection(f_list)))
+
+// Set .difference() Operation
+e_sub = int(input())
+e_list = set([int(x) for x in input().split()])
+f_sub = int(input())
+f_list = set([int(x) for x in input().split()])
+
+print(len(e_list.difference(f_list)))
+
+// Set .symmetric_difference() Operation
+e_sub = int(input())
+e_list = set([int(x) for x in input().split()])
+f_sub = int(input())
+f_list = set([int(x) for x in input().split()]) 
+
+print(len(e_list.symmetric_difference(f_list)))
+
+// Set Mutations
+set_A_amount = int(input())
+A = set([int(x) for x in input().split()])
+remaining_sets = int(input())
+
+for i in range(0, remaining_sets * 2, 2):
+    command_full = input().split()
+    command = command_full[0]
+    op_set_length = int(command_full[1])
+    operation_set = set([int(x) for x in input().split()])
+    
+    if command == 'intersection_update':
+        A.intersection_update(operation_set)
+    elif command == 'update':
+        A.update(operation_set)
+    elif command == 'symmetric_difference_update':
+        A.symmetric_difference_update(operation_set)
+    elif command == 'difference_update':
+        A.difference_update(operation_set)
+        
+print(sum(A))
+
+// The Captain's Room
+k = int(input())
+rooms = list(map(int, input().split()))
+
+unique_rooms = set(rooms)
+
+captain_room = (sum(unique_rooms) * k - sum(rooms)) // (k - 1)
+print(captain_room)
+
+// Check Subset
+// TO SOVLE
+
+// Check Strict Subset
+// TO SOLVE
+
+// No Idea!
+happiness = 0
+
+array_size_and_set_size = [int(x) for x in input().split()]
+array_size = array_size_and_set_size[0]
+set_size = array_size_and_set_size[1]
+
+array = [int(x) for x in input().split()]
+A = set([int(x) for x in input().split()])
+B = set([int(x) for x in input().split()])
+
+for value in array:
+    if value in A:
+        happiness = happiness + 1
+    elif value in B:
+        happiness = happiness - 1
+        
+print(happiness)

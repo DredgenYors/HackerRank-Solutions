@@ -56,7 +56,58 @@ int main() {
 }
 
 // Maps-STL
-// TO SOLVE
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int Q;
+    int Query;
+    string Query_line;
+    string name;
+    int score;
+    map <string, int> m;
+    
+    cin >> Q;
+    
+    for (int i = 0; i < Q; i++) {
+        cin >> Query;
+        
+        if (Query == 1) {
+            cin >> name >> score;
+            map<string,int>::iterator itr = m.find(name);
+            if (itr != m.end()) {
+                itr->second = itr->second + score;
+            }
+            else {
+                m.insert(make_pair(name,score));
+            }
+        }
+        else if (Query == 2) {
+            cin >> name;
+            m.erase(name);
+        }
+        else if (Query == 3) {
+            cin >> name;
+            map<string,int>::iterator itr = m.find(name);
+            if (itr != m.end()) {
+                cout << itr->second << '\n';
+            }
+            else {
+                cout << 0 << '\n';
+            }
+        }
+        
+    }
+     
+    return 0;
+}
 
 // Print Pretty
 // TO SOLVE

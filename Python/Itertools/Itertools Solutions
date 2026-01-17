@@ -1,11 +1,51 @@
 // itertools.product()
-// TO SOLVE
+from itertools import product
+
+A = [int(x) for x in input().split()]
+B = [int(x) for x in input().split()]
+
+sorted_product = sorted(product(A,B))
+
+for item in sorted_product:
+    print(item, end = " ")
 
 // itertools.permutations()
-// TO SOLVE
+from itertools import permutations
+
+str_input = input().split()
+word = str_input[0]
+k = int(str_input[1])
+
+perm = sorted(permutations(word,k))
+str_perm = []
+str_item = ''
+
+for item in perm:
+    for i in range(0,k):
+        str_item = str_item + item[i]
+    
+    str_perm.append(str_item)
+    str_item = ''
+
+for item in str_perm:
+    print(item)
 
 // itertools.combinations()
-// TO SOLVE
+from itertools import combinations
+
+list_inp = input().split()
+word = sorted(list_inp[0])
+k = int(list_inp[1])
+
+temp_str = ''
+for i in range(1,k+1):
+    combo_list = combinations(word,i)
+    for item in combo_list:
+        for j in range(0,i):
+            temp_str = temp_str + item[j]
+            
+        print(temp_str)
+        temp_str = ''
 
 // itertools.combinations_with_replacement()
 // TO SOLVE

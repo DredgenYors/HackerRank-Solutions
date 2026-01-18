@@ -110,7 +110,83 @@ int main() {
 }
 
 // Print Pretty
-// TO SOLVE
+#include <iostream>
+#include <iomanip> 
+using namespace std;
+
+int main() {
+	int T; cin >> T;
+	cout << setiosflags(ios::uppercase);
+	cout << setw(0xf) << internal;
+	while(T--) {
+		double A; cin >> A;
+		double B; cin >> B;
+		double C; cin >> C;
+        
+        int digit;
+        long long n = A;
+        string hex = "";
+        char polarity = '+';
+        
+        if (n == 0) {
+            hex = "0";
+        }
+        else {
+            while (n != 0) {
+                digit = n % 16;
+                n = n / 16;
+                char h;
+                
+                if (digit < 10) {
+                    h = '0' + digit;
+                }
+                else {
+                    h = 'a' + (digit - 10);
+                }
+                
+                hex = h + hex;
+            }
+        }
+        
+        
+        hex = "0x" + hex;
+        cout << setw(0) << hex << '\n';
+        
+        if (B > 0) {
+            polarity = '+';
+        }
+        else if (B < 0) {
+            polarity = '-';
+        }
+        
+        int Bint = int(B);
+        string BStr = polarity + to_string(Bint);
+        int BStr_Length = BStr.length() + 3;
+        int width = 16 - BStr_Length;
+        
+        cout << setfill('_') << setw(width) << polarity << fixed << setprecision(2) << B << '\n';
+        
+        int power = 0;
+        while (C >= 10) {
+            C = C / 10;
+            power++;
+        }
+        
+        string sciNot = "E+";
+        
+        if (power < 10) {
+            sciNot = sciNot + '0' + to_string(power);
+        }
+        else if (power >= 10) {
+            sciNot = sciNot + to_string(power);
+        }
+        
+        cout << setprecision(9) << C << sciNot << '\n';
+        
+	}
+	return 0;
+
+}
 
 // Deque-STL
 // TO SOLVE

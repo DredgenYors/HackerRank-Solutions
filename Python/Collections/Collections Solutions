@@ -1,5 +1,27 @@
 // collections.Counter()
-// TO SOLVE
+from collections import Counter
+
+profit = 0
+
+X = int(input())
+
+shoe_sizes = [int(x) for x in input().split()]
+inventory = Counter(shoe_sizes)
+
+N = int(input())
+
+for i in range(0,N):
+    shoesize_and_price = [int(x) for x in input().split()]
+    size = shoesize_and_price[0] 
+    price = shoesize_and_price[1]
+    
+    if size in Counter(shoe_sizes).keys():
+        profit += price
+        shoe_sizes.remove(size)
+    else:
+        continue
+        
+print(profit)
 
 // DefaultDict Tutorial
 // TO SOLVE

@@ -9,7 +9,6 @@ using namespace std;
 template <class x>
 class AddElements {
     x element1;
-    x element2;
     public:
         AddElements (x arg) {element1 = arg;}
         x add (x element2) {return element1 + element2;}  
@@ -18,7 +17,6 @@ class AddElements {
 template<>
 class AddElements <string> {
     string element1;
-    string element2;
     public:
         AddElements (string arg) {element1 = arg;}
         string concatenate (string element2) {return element1 + element2;}  
@@ -53,4 +51,3 @@ int main () {
   }
   return 0;
 }
-

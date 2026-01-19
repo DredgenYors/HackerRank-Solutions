@@ -216,7 +216,31 @@ if __name__ == '__main__':
     fptr.close()
 
 // String Formatting
-// TO SOLVE
+def print_formatted(number):
+    n = number
+    
+    binary_final = bin(n)
+    formatted_binary_final = binary_final[2:]
+    len_indent = len(formatted_binary_final)
+    
+    for i in range(1, n + 1):
+        decimal = str(i)
+        
+        binary = bin(i)
+        formatted_binary = binary[2:]
+    
+        octal = oct(i)
+        formatted_octal = octal[2:]
+        
+        hexadec = hex(i)
+        formatted_hex = hexadec[2:].upper()
+        
+        print(f" {decimal:>{len_indent-1}} {formatted_octal:>{len_indent}} {formatted_hex:>{len_indent}} {formatted_binary:>{len_indent}}")
+        
+    
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
 
 // The Minion Game
 // TO SOLVE

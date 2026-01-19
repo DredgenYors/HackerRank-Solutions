@@ -48,7 +48,15 @@ for i in range(1,k+1):
         temp_str = ''
 
 // itertools.combinations_with_replacement()
-// TO SOLVE
+from itertools import combinations_with_replacement
+
+list_inp = input().split()
+word = ''.join(sorted(list_inp[0]))
+k = int(list_inp[1])
+cwr = [ ''.join(x) for x in combinations_with_replacement(word,k)]
+
+for item in cwr:
+    print(item)
 
 // Compress the String!
 // TO SOLVE

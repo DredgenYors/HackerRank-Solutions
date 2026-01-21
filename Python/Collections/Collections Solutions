@@ -24,7 +24,34 @@ for i in range(0,N):
 print(profit)
 
 // DefaultDict Tutorial
-// TO SOLVE
+from collections import defaultdict
+
+a = 1
+
+n_and_m = [int(x) for x in input().split()]
+n,m = n_and_m
+
+A_list = [input() for j in range(n)]
+B_list = [input() for k in range(m)]
+positions_list = []
+
+dA = defaultdict(list)
+
+for item in A_list:
+    dA[item].append(a)
+    a += 1
+
+for item in B_list:
+    if dA[item] != []:
+        positions_list.append(dA[item])
+    else:
+        positions_list.append(-1)
+
+for position in positions_list:
+    if position != -1:
+        print(*position)
+    else:
+        print(-1)
 
 // Collections.namedtuple()
 // TO SOLVE

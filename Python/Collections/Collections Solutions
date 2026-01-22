@@ -103,7 +103,29 @@ for key in od:
     print(key + ' '+ str(sum(od[key])))
 
 // Collections.deque()
-// TO SOLVE
+from collections import deque
+
+N = int(input())
+d = deque()
+
+for i in range(N):
+    command_with_index = input().split()
+    if len(command_with_index) == 1:
+        if command_with_index[0] == 'pop':
+            d.pop()
+        elif command_with_index[0] =='popleft':
+            d.popleft()
+        
+    else:
+        command, index = command_with_index
+    
+        if command == 'append':
+            d.append(index)
+        elif command == 'appendleft':
+            d.appendleft(index)
+        
+for item in d:
+    print(item, end=' ')
 
 // Word Order
 // TO SOLVE

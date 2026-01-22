@@ -54,7 +54,27 @@ for position in positions_list:
         print(-1)
 
 // Collections.namedtuple()
-// TO SOLVE
+from collections import namedtuple
+
+N = int(input())
+fields = input().split()
+i = 0
+
+for item in fields:
+    if item == "MARKS":
+        index = i
+        break
+    else:
+        i += 1
+        
+score = 0
+
+for j in range(0,N):
+    data = input().split()
+    mark = int(data[i])
+    score += mark
+    
+print(score / N)
 
 // Collectections.OrderedDict()
 // TO SOLVE

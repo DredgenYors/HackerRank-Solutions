@@ -77,7 +77,30 @@ for j in range(0,N):
 print(score / N)
 
 // Collectections.OrderedDict()
-// TO SOLVE
+from collections import OrderedDict
+
+N = int(input())
+
+od = OrderedDict()
+
+for i in range(N):
+    item_and_price = input()
+    j = 0
+    for char in item_and_price:
+        if char.isnumeric():
+            item = item_and_price[:j-1]
+            price = int(item_and_price[j:])
+            break
+        else:
+            j += 1
+            
+    if item in od:
+        od[item].append(price)
+    else:
+        od[item] = [price]
+        
+for key in od:
+    print(key + ' '+ str(sum(od[key])))
 
 // Collections.deque()
 // TO SOLVE

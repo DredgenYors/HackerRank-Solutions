@@ -1,5 +1,13 @@
 // Zipped!
-// TO SOLVE
+students, subjects = map(int, input().split())
+
+score_list = []
+
+for i in range(subjects):
+    score_list.append(list(map(float, input().split())))
+
+for item in zip(*score_list):
+    print(sum(item) / subjects)
 
 // Input()
 // TO SOLVE

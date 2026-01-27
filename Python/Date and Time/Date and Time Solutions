@@ -1,5 +1,14 @@
 // Calendar Module
-// TO SOLVE
+import calendar
+
+date = input().split()
+month, day, year = date
+
+weekdays = calendar.day_name
+
+weekday_num = calendar.weekday(int(year), int(month), int(day))
+
+print(weekdays[weekday_num].upper())
 
 // Time Delta
 // TO SOLVE

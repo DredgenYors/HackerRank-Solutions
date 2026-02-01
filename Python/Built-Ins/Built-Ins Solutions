@@ -26,7 +26,7 @@ else:
     print('False')
 
 // Python Evaluation
-// TO SOLVE
+eval(input())
 
 // Any or All
 // TO SOLVE

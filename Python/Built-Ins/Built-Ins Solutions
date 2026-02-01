@@ -10,7 +10,20 @@ for item in zip(*score_list):
     print(sum(item) / subjects)
 
 // Input()
-// TO SOLVE
+x_and_k = list(map(int, input().split()))
+x,k = x_and_k
+polynomial = input().split('+')
+
+sum = 0
+
+for item in polynomial:
+    par_sum = eval(item)
+    sum += par_sum
+    
+if sum == k:
+    print('True')
+else:
+    print('False')
 
 // Python Evaluation
 // TO SOLVE

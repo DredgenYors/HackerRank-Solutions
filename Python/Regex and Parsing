@@ -1,5 +1,17 @@
 // Detect Floating Point Number
-// TO SOLVE
+cases = int(input())
+
+for i in range(cases):
+    case = input()
+    if case == '0':
+        print('False')
+        continue
+    try:
+        float(case)
+        print('True')
+    except:
+        print('False')
+        continue
 
 // Re.split()
 // TO SOLVE

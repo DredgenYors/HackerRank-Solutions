@@ -14,7 +14,10 @@ for i in range(cases):
         continue
 
 // Re.split()
-// TO SOLVE
+regex_pattern = r"[,.]+"	# Do not delete 'r'.
+
+import re
+print("\n".join(re.split(regex_pattern, input())))
 
 // Group(), Groups() & Groupdict()
 // TO SOLVE

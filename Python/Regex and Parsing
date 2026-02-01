@@ -20,7 +20,15 @@ import re
 print("\n".join(re.split(regex_pattern, input())))
 
 // Group(), Groups() & Groupdict()
-// TO SOLVE
+import re
+
+string = input()
+
+s = re.search(r"([A-Za-z0-9])\1", string)
+if s:
+    print(s.group(1))
+else:
+    print(-1)
 
 // Re.findall() & Re.finditer()
 // TO SOLVE

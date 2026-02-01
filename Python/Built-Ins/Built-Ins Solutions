@@ -29,7 +29,17 @@ else:
 eval(input())
 
 // Any or All
-// TO SOLVE
+N = int(input())
+numbers = list(map(int, input().split()))
+str_numbers = list(map(str,numbers))
+
+if all(x > 0 for x in numbers):
+    if any(x[::-1] == x for x in str_numbers):
+        print('True')
+    else:
+        print('False')
+else:
+    print('False')
 
 // Athlete Sort
 // TO SOLVE

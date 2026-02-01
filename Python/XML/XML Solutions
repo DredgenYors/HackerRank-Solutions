@@ -1,5 +1,25 @@
 // XML 1 - Find the Score
-// TO SOLVE
+import sys
+import xml.etree.ElementTree as etree
+
+def get_attr_number(node):
+    a_sum = len(node.attrib)
+    for item in node:
+        #print(f"Item: {item.attrib}")
+        #print(f"Item Length: {len(item.attrib)}")
+        a_sum += len(item.attrib)
+        #print(f"Sum: {a_sum}")
+        for sub_item in item:
+            a_sum += len(sub_item.attrib)
+    
+    return(a_sum)
+        
+if __name__ == '__main__':
+    sys.stdin.readline()
+    xml = sys.stdin.read()
+    tree = etree.ElementTree(etree.fromstring(xml))
+    root = tree.getroot()
+    print(get_attr_number(root))
 
 // XML 2 - Find the Maximum Depth
 // TO SOLVE

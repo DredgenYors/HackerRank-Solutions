@@ -117,7 +117,23 @@ print(numpy.ceil(numpyArr))
 print(numpy.rint(numpyArr))
 
 // Sum and Prod
-// TO SOLVE
+import numpy
+
+NandM = list(map(int,input().split()))
+N,M = NandM
+
+arr = []
+
+for i in range(N):
+    tempArr = list(map(int,input().split()))
+    arr.append(tempArr)
+    
+numpyArr = numpy.array(arr)
+numpyArr.shape = (N,M)
+
+npyArrSum = numpy.sum(numpyArr, axis = 0)
+
+print(numpy.prod(npyArrSum))
 
 // Min and Max
 // TO SOLVE

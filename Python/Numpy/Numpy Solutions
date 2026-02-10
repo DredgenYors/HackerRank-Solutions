@@ -136,7 +136,23 @@ npyArrSum = numpy.sum(numpyArr, axis = 0)
 print(numpy.prod(npyArrSum))
 
 // Min and Max
-// TO SOLVE
+import numpy
+
+NandM = list(map(int,input().split()))
+
+N,M = NandM
+
+arr = []
+
+for i in range(N):
+    tempArr = list(map(int,input().split()))
+    arr.append(tempArr)
+    
+numpyArr = numpy.array(arr)
+numpyArr.shape = (N,M)
+
+npyArrMin = numpy.min(numpyArr, axis = 1)
+print(numpy.max(npyArrMin))
 
 // Mean, Var, and Std
 // TO SOLVE

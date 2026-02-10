@@ -11,7 +11,14 @@ result = arrays(arr)
 print(result)
 
 // Shape and Reshape
-// TO SOLVE
+import numpy
+
+array = list(map(int, input().split()))
+
+nparr = numpy.array(array)
+nparr.shape = (3,3)
+
+print(nparr)
 
 // Transpose and Flatten
 // TO SOLVE

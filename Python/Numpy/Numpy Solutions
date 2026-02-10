@@ -106,7 +106,15 @@ print(numpyA % numpyB)
 print(numpyA ** numpyB)
 
 // Floor, Ceil, and Rint
-// TO SOLVE
+import numpy
+numpy.set_printoptions(legacy='1.13')
+
+arr = list((map(float,input().split())))
+numpyArr = numpy.array(arr)
+
+print(numpy.floor(numpyArr))
+print(numpy.ceil(numpyArr))
+print(numpy.rint(numpyArr))
 
 // Sum and Prod
 // TO SOLVE

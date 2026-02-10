@@ -202,7 +202,16 @@ numpyB.shape = (N,N)
 print(numpy.dot(numpyA, numpyB))
 
 // Inner and Outer
-// TO SOLVE
+import numpy
+
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+numpyA = numpy.array(A)
+numpyB = numpy.array(B)
+
+print(numpy.inner(A,B))
+print(numpy.outer(A,B))
 
 // Polynomials
 // TO SOLVE

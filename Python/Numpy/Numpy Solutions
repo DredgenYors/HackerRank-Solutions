@@ -224,4 +224,19 @@ numpyCP = numpy.array(coeffP)
 print(numpy.polyval(numpyCP,x))
 
 // Linear Algebra
-// TO SOLVE
+import numpy
+
+N = int(input())
+A = []
+
+
+for i in range(N):
+    tempArray = list(map(float, input().split()))
+    A.append(tempArray)
+    
+numpyA = numpy.array(A)
+numpyA.shape = (N,N)
+
+det = numpy.linalg.det(numpyA)
+
+print(round(det, 2))

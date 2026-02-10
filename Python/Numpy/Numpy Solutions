@@ -178,7 +178,28 @@ std = numpy.std(numpyArr)
 print(numpy.round(std, 11))
 
 // Dot and Cross
-// TO SOLVE
+import numpy
+
+N = int(input())
+A = []
+B = []
+
+
+for i in range(N):
+    tempArray = list(map(int, input().split()))
+    A.append(tempArray)
+    
+for i in range(N):
+    tempArray = list(map(int, input().split()))
+    B.append(tempArray)
+    
+numpyA = numpy.array(A)
+numpyB = numpy.array(B)
+
+numpyA.shape = (N,N)
+numpyB.shape = (N,N)
+
+print(numpy.dot(numpyA, numpyB))
 
 // Inner and Outer
 // TO SOLVE

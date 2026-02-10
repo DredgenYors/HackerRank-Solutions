@@ -76,7 +76,34 @@ N,M = NandM
 print(numpy.eye(N,M))
 
 // Array Mathematics
-// TO SOLVE
+import numpy
+
+NandM = list(map(int, input().split()))
+A = []
+B = []
+
+N,M = NandM
+
+for i in range(N):
+    tempArray = list(map(int, input().split()))
+    A.append(tempArray)
+    
+for i in range(N):
+    tempArray = list(map(int, input().split()))
+    B.append(tempArray)
+    
+numpyA = numpy.array(A)
+numpyB = numpy.array(B)
+
+numpyA.shape = (N,M)
+numpyB.shape = (N,M)
+
+print(numpyA + numpyB)
+print(numpyA - numpyB)
+print(numpyA * numpyB)
+print(numpyA // numpyB)
+print(numpyA % numpyB)
+print(numpyA ** numpyB)
 
 // Floor, Ceil, and Rint
 // TO SOLVE

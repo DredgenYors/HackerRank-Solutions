@@ -39,7 +39,28 @@ print(numpy.transpose(nparr))
 print(nparr.flatten())
 
 // Concatenate
-// TO SOLVE
+import numpy
+
+NMP = list(map(int, input().split()))
+
+N, M, P = NMP
+
+totalN = []
+totalM = []
+
+for i in range(N):
+    tempN = list(map(int, input().split()))
+    totalN.append(tempN)
+    
+nparrN = numpy.array(totalN)
+
+for i in range(M):
+    tempM = list(map(int, input().split()))
+    totalM.append(tempM)
+    
+nparrM = numpy.array(totalM)
+
+print(numpy.concatenate((nparrN, nparrM), axis = 0))
 
 // Zeros and Ones
 // TO SOLVE

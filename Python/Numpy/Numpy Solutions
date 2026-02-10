@@ -155,7 +155,27 @@ npyArrMin = numpy.min(numpyArr, axis = 1)
 print(numpy.max(npyArrMin))
 
 // Mean, Var, and Std
-// TO SOLVE
+import numpy
+
+NandM = list(map(int,input().split()))
+
+N,M = NandM
+
+arr = []
+
+for i in range(N):
+    tempArr = list(map(int,input().split()))
+    arr.append(tempArr)
+    
+numpyArr = numpy.array(arr)
+numpyArr.shape = (N,M)
+
+print(numpy.mean(numpyArr, axis = 1))
+print(numpy.var(numpyArr, axis = 0))
+
+std = numpy.std(numpyArr)
+
+print(numpy.round(std, 11))
 
 // Dot and Cross
 // TO SOLVE

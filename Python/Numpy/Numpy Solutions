@@ -21,7 +21,22 @@ nparr.shape = (3,3)
 print(nparr)
 
 // Transpose and Flatten
-// TO SOLVE
+import numpy
+
+NandM = list(map(int, input().split()))
+N, M = NandM
+
+total_arr = []
+
+for i in range(N):
+    temp_array = list(map(int,input().split()))
+    
+    total_arr.append(temp_array)
+    
+nparr = numpy.array(total_arr)
+
+print(numpy.transpose(nparr))
+print(nparr.flatten())
 
 // Concatenate
 // TO SOLVE

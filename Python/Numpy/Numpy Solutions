@@ -214,7 +214,14 @@ print(numpy.inner(A,B))
 print(numpy.outer(A,B))
 
 // Polynomials
-// TO SOLVE
+import numpy
+
+coeffP = list(map(float, input().split()))
+x = int(input())
+
+numpyCP = numpy.array(coeffP)
+
+print(numpy.polyval(numpyCP,x))
 
 // Linear Algebra
 // TO SOLVE

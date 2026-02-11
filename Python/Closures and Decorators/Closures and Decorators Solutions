@@ -1,5 +1,43 @@
 // Standardize Mobile Number Using Decorators
-// TO SOLVE
+def wrapper(f):
+    def fun(l):
+        j = 0
+        prefix = '+91'
+        for item in l:
+            if item[0] == '0':
+                item = item[1:]
+                if len(item) == 10:
+                    item = prefix + ' ' + item[0:5] + ' ' + item[5:10]
+                    l[j] = item
+                else:
+                    item = prefix + ' ' + item[2:7] + ' ' + item[7:12]
+                    l[j] = item
+            elif item[0] == '+':
+                item = item[1:]
+                if len(item) == 10:
+                    item = prefix + ' ' + item[0:5] + ' ' + item[5:10]
+                    l[j] = item
+                else:
+                    item = prefix + ' ' + item[2:7] + ' ' + item[7:12]
+                    l[j] = item
+            else:
+                if len(item) == 10:
+                    item = prefix + ' ' + item[0:5] + ' ' + item[5:10]
+                    l[j] = item
+                else:
+                    item = prefix + ' ' + item[2:7] + ' ' + item[7:12]
+                    l[j] = item
+            j += 1  
+        f(l)
+    return fun
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l) 
 
 // Decorators 2 - Name Directory
 // TO SOLVE

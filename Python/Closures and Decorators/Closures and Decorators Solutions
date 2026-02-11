@@ -40,4 +40,25 @@ if __name__ == '__main__':
     sort_phone(l) 
 
 // Decorators 2 - Name Directory
-// TO SOLVE
+import operator
+
+def person_lister(f):
+    def inner(people):
+        people.sort(key=lambda x: int(operator.itemgetter(2)(x)))
+
+        i = 0
+        for item in people:
+            item = f(item)
+            people[i] = item
+            
+            i += 1
+        return(people)
+    return inner
+
+@person_lister
+def name_format(person):
+    return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
+
+if __name__ == '__main__':
+    people = [input().split() for i in range(int(input()))]
+    print(*name_format(people), sep='\n')

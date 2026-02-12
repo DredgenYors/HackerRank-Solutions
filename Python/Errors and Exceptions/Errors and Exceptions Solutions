@@ -13,4 +13,20 @@ for i in range(T):
         print("Error Code:", e)
 
 // Incorrect Regex
-// TO SOLVE
+import re
+
+T = int(input())
+
+# Reject possessive quantifiers like *+, ++, ?+, {m,n}+
+possessive = re.compile(r'(?<!\\)(?:\*\+|\+\+|\?\+|\{\d+(?:,\d*)?\}\+)')
+
+for _ in range(T):
+    exp = input()
+    if possessive.search(exp):
+        print("False")
+        continue
+    try:
+        re.compile(exp)
+        print("True")
+    except re.error:
+        print("False")

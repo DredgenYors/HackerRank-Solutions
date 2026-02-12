@@ -44,7 +44,22 @@ else:
         print(item)
 
 // Re.start() & Re.end()
-// TO SOLVE
+import re
+
+S = input()
+k = input()
+
+k = re.escape(k)
+
+pattern = rf"(?=({k}))"
+
+found = False
+for m in re.finditer(pattern,S):
+    found = True
+    print((m.start(1), m.end(1) - 1))
+    
+if found is False:
+    print((-1,-1))
 
 // Validating phone numbers
 // TO SOLVE

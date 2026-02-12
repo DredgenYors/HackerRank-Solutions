@@ -31,7 +31,17 @@ else:
     print(-1)
 
 // Re.findall() & Re.finditer()
-// TO SOLVE
+import re
+
+S = input()
+
+vowelList = re.findall(r'(?<=[QWRTYPSDFGHJKLZXCVBNMqwrtypsdfghjklzxcvbnm])[AEIOUaeiou]{2,}(?=[QWRTYPSDFGHJKLZXCVBNMqwrtypsdfghjklzxcvbnm])', S)
+
+if vowelList == []:
+    print(-1)
+else:
+    for item in vowelList:
+        print(item)
 
 // Re.start() & Re.end()
 // TO SOLVE

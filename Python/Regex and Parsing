@@ -62,7 +62,21 @@ if found is False:
     print((-1,-1))
 
 // Validating phone numbers
-// TO SOLVE
+import re
+
+regex_pattern = r"^(7|8|9)(\d{9})$"
+
+N = int(input())
+
+for i in range(N):
+    number = input()
+    if len(number) == 10:
+        if bool(re.match(regex_pattern, number)) is True:
+            print("YES")
+        else:
+            print("NO")
+    else:
+        print("NO")
 
 // Validating Roman Numerals
 regex_pattern = r"^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"	# Do not delete 'r'.

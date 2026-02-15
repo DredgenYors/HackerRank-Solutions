@@ -85,7 +85,23 @@ import re
 print(str(bool(re.match(regex_pattern, input()))))
 
 // Validating and Parsing Email Addresses
-// TO SOLVE
+import re
+import email.utils
+
+email_re = re.compile(
+    r'^[A-Za-z][A-Za-z0-9._-]*'
+    r'@'
+    r'[A-Za-z]+'
+    r'\.'
+    r'[A-Za-z]{1,3}$'
+)
+n = int(input())
+
+for i in range(n):
+    name, addr = email.utils.parseaddr(input())
+
+    if email_re.match(addr):
+        print(email.utils.formataddr((name, addr)))
 
 // Hex Color Code
 // TO SOLVE
